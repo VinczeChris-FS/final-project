@@ -1,4 +1,4 @@
-import React from "react";
+// Header component
 
 function Header() {
   return (
