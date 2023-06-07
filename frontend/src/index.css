@@ -31,6 +31,39 @@ header h1 {
   margin: 0;
 }
 
+.form-field {
+  margin: 1rem 0;
+}
+
+.form-field label {
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-field input {
+  /* Reset browser font defaults */
+  font: inherit;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.formField input:focus {
+  outline: none;
+  background-color: #f8f8ff;
+}
+
+.add-book {
+  /* 800px equivalent, 50 * 16 (1rem) = 800 */
+  max-width: 50rem;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+}
+
 button {
   /* Take values from its parent element, not browser default */
   font: inherit;
