@@ -19,8 +19,20 @@ h3 {
   color: #323b3c;
 }
 
+header {
+  background-color: #cce8e5;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
 button {
-  /* Reset browser font defaults */
+  /* Take values from its parent element, not browser default */
   font: inherit;
   padding: 0.5rem 2rem;
   background-color: #cce8e5;
