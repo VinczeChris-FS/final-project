@@ -1,7 +1,9 @@
+import Header from "./components/Header";
+
 function App() {
   return (
     <div>
-      <h1>Bill's Bookstore</h1>
+      <Header />
       <h2>Add a New Book</h2>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quod
