@@ -31,18 +31,27 @@ header h1 {
   margin: 0;
 }
 
-.form-field {
+section.add-book {
+  /* 800px equivalent, 50 * 16 (1rem) = 800 */
+  max-width: 50rem;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+}
+
+div.form-field {
   margin: 1rem 0;
 }
 
-.form-field label {
+div.form-field label {
   font-weight: bold;
   font-size: 1.25rem;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.form-field input {
+div.form-field input {
   /* Take values from its parent element, not browser default */
   font: inherit;
   display: block;
@@ -50,18 +59,9 @@ header h1 {
   padding: 0.5rem;
 }
 
-.formField input:focus {
+div.form-field input:focus {
   outline: none;
   background-color: #f8f8ff;
-}
-
-.add-book {
-  /* 800px equivalent, 50 * 16 (1rem) = 800 */
-  max-width: 50rem;
-  margin: 0 auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  padding: 1rem 1.5rem;
 }
 
 button {
@@ -79,30 +79,30 @@ button:hover {
   border: 1px solid rgba(204, 232, 229, 0.7);
 }
 
-.books {
+section.books {
   /* 640px equivalent, 40 * 16 (1rem) = 600 */
   max-width: 40rem;
   margin: 2rem auto;
 }
 
-.book-list {
+ul.book-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.book-item {
+li.book-item {
   margin: 1rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 6px;
   padding: 1rem;
 }
 
-.book-item p {
+li.book-item p {
   font-size: 1.25rem;
 }
 
-.delete-btn {
+button.delete-btn {
   /* Take values from its parent element, not browser default */
   font: inherit;
   padding: 0.5rem 2rem;
@@ -111,12 +111,12 @@ button:hover {
   cursor: pointer;
 }
 
-.delete-btn:hover {
+button.delete-btn:hover {
   /* RGB equivalent with 70% opacity */
   background-color: rgba(237, 239, 239, 0.7);
   border: 1px solid rgba(237, 239, 239, 0.7);
 }
 
-.availability-msg {
+p.availability-msg {
   text-align: right;
 }
