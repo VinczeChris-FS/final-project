@@ -43,7 +43,7 @@ header h1 {
 }
 
 .form-field input {
-  /* Reset browser font defaults */
+  /* Take values from its parent element, not browser default */
   font: inherit;
   display: block;
   width: 100%;
@@ -77,4 +77,46 @@ button:hover {
   /* RGB equivalent with 70% opacity */
   background-color: rgba(204, 232, 229, 0.7);
   border: 1px solid rgba(204, 232, 229, 0.7);
+}
+
+.books {
+  /* 640px equivalent, 40 * 16 (1rem) = 600 */
+  max-width: 40rem;
+  margin: 2rem auto;
+}
+
+.book-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.book-item {
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.book-item p {
+  font-size: 1.25rem;
+}
+
+.delete-btn {
+  /* Take values from its parent element, not browser default */
+  font: inherit;
+  padding: 0.5rem 2rem;
+  background-color: #edefef;
+  border: 1px solid #edefef;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  /* RGB equivalent with 70% opacity */
+  background-color: rgba(237, 239, 239, 0.7);
+  border: 1px solid rgba(237, 239, 239, 0.7);
+}
+
+.availability-msg {
+  text-align: right;
 }
