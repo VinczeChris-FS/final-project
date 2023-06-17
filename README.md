@@ -39,3 +39,19 @@ npm start
 ## Local project URL
 
 http://localhost:4001/
+
+## Deploy on Heroku
+
+### Create new Heroku app
+
+- From dashboard, New > Create New App.
+- Deploy > Deployment Method > GitHub
+- Enable Automatic Deploys
+
+### View Heroku logs
+
+Heroku Dashboard > More > View Logs.
+
+```
+heroku logs --app fs-final-project
+```
