@@ -16,7 +16,7 @@ app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
 // If a GET request comes in not handled by API endpoint, return React app
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
 });
 
 app.listen(PORT, () => {
