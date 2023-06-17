@@ -1,0 +1,16 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "This repo is for my Final Project for the _Full Sail University_ Web Development Bachelor of Science degree.",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && node index.js",
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "18.15.0"
+  }
+}
