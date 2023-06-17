@@ -3,24 +3,23 @@
 // Import BookItem component
 import BookItem from "./BookItem";
 
-function BookList() {
+// useState hook passed in from App.js
+function BookList(props) {
   return (
     <section className="books">
       <ul className="book-list">
-        <BookItem
-          title="Sample Title1"
-          price="19.99"
-          length="416"
-          publisher="Sample Publisher"
-          year="2023"
-        />
-        <BookItem
-          title="Sample Title2"
-          price="19.99"
-          length="416"
-          publisher="Sample Publisher"
-          year="2023"
-        />
+        {props.books.map((book) => {
+          return (
+            <BookItem
+              key={book.id}
+              title={book.title}
+              price={book.price}
+              length={book.length}
+              publisher={book.publisher}
+              year={book.year}
+            />
+          );
+        })}
       </ul>
     </section>
   );

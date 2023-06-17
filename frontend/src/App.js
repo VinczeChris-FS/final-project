@@ -1,14 +1,36 @@
+import { useState } from "react";
+
 // Import components
 import Header from "./components/Header";
 import AddBook from "./components/AddBook";
 import BookList from "./components/BookList";
 
 function App() {
+  // useState hook
+  // Pass in as props to BookList component
+  const [books, setBooks] = useState([
+    {
+      id: 1,
+      title: "Sample Title1",
+      price: "19.99",
+      length: "416",
+      publisher: "Sample Publisher",
+      year: "2022",
+    },
+    {
+      id: 2,
+      title: "Sample Title2",
+      price: "9.99",
+      length: "318",
+      publisher: "Sample Publisher2",
+      year: "2023",
+    },
+  ]);
   return (
     <div>
       <Header />
       <AddBook />
-      <BookList />
+      <BookList books={books} />
     </div>
   );
 }
