@@ -25,6 +25,14 @@ function App() {
       publisher: "Sample Publisher2",
       year: "2023",
     },
+    {
+      id: 3,
+      title: "Sample Title3",
+      price: "14.99",
+      length: "391",
+      publisher: "Sample Publisher3",
+      year: "2020",
+    },
   ]);
   return (
     <div>
