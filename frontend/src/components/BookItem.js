@@ -2,7 +2,11 @@
 
 function BookItem(props) {
   return (
-    <li className="book-item">
+    <li
+      // className="book-item"
+      className={`book-item ${props.inStock === true ? "available" : ""}`}
+      onDoubleClick={() => props.onToggle(props.id)}
+    >
       <h2>{props.title}</h2>
       <p>Price: ${props.price}</p>
       <p>Length: {props.length}</p>

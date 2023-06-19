@@ -18,7 +18,9 @@ function BookList(props) {
               length={book.length}
               publisher={book.publisher}
               year={book.year}
+              inStock={book.inStock}
               onDelete={props.onDelete}
+              onToggle={props.onToggle}
             />
           );
         })}
