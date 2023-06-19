@@ -12,11 +12,13 @@ function BookList(props) {
           return (
             <BookItem
               key={book.id}
+              id={book.id}
               title={book.title}
               price={book.price}
               length={book.length}
               publisher={book.publisher}
               year={book.year}
+              onDelete={props.onDelete}
             />
           );
         })}

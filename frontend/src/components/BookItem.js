@@ -8,7 +8,11 @@ function BookItem(props) {
       <p>Length: {props.length}</p>
       <p>Publisher: {props.publisher}</p>
       <p>Year: {props.year}</p>
-      <button type="button" className="delete-btn">
+      <button
+        type="button"
+        className="delete-btn"
+        onClick={() => props.onDelete(props.id)}
+      >
         Delete Book
       </button>
       <p className="availability-msg">Double-click to change availability</p>

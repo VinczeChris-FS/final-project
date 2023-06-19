@@ -34,11 +34,20 @@ function App() {
       year: "2020",
     },
   ]);
+
+  // Delete book function
+  // Pass in as props to BookList component
+  function deleteBook(id) {
+    // console.log("delete", id);
+    // useState hook
+    setBooks(books.filter((book) => book.id !== id));
+  }
+
   return (
     <div>
       <Header />
       <AddBook />
-      <BookList books={books} />
+      <BookList books={books} onDelete={deleteBook} />
     </div>
   );
 }
