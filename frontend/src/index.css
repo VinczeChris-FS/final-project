@@ -1,6 +1,6 @@
 /* All CSS goes here */
 
-/* Google Fonts PT Sans */
+/* ============= Google Fonts PT Sans */
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
 
 * {
@@ -19,6 +19,7 @@ h3 {
   color: #323b3c;
 }
 
+/* ============= Header component ============== */
 header {
   background-color: #cce8e5;
   height: 4.5rem;
@@ -31,6 +32,7 @@ header h1 {
   margin: 0;
 }
 
+/* ============= AddBook component ============== */
 section.add-book {
   /* 800px equivalent, 50 * 16 (1rem) = 800 */
   max-width: 50rem;
@@ -40,6 +42,22 @@ section.add-book {
   padding: 1rem 1.5rem;
 }
 
+button {
+  /* Take values from its parent element, not browser default */
+  font: inherit;
+  padding: 0.5rem 2rem;
+  background-color: #cce8e5;
+  border: 1px solid #cce8e5;
+  cursor: pointer;
+}
+
+button:hover {
+  /* RGB equivalent with 70% opacity */
+  background-color: rgba(204, 232, 229, 0.7);
+  border: 1px solid rgba(204, 232, 229, 0.7);
+}
+
+/* ============= FormField component ============== */
 div.form-field {
   margin: 1rem 0;
 }
@@ -64,21 +82,7 @@ div.form-field input:focus {
   background-color: #f8f8ff;
 }
 
-button {
-  /* Take values from its parent element, not browser default */
-  font: inherit;
-  padding: 0.5rem 2rem;
-  background-color: #cce8e5;
-  border: 1px solid #cce8e5;
-  cursor: pointer;
-}
-
-button:hover {
-  /* RGB equivalent with 70% opacity */
-  background-color: rgba(204, 232, 229, 0.7);
-  border: 1px solid rgba(204, 232, 229, 0.7);
-}
-
+/* ============= BookList component ============== */
 section.books {
   /* 640px equivalent, 40 * 16 (1rem) = 600 */
   max-width: 40rem;
@@ -91,6 +95,7 @@ ul.book-list {
   padding: 0;
 }
 
+/* ============= BookItem component ============== */
 li.book-item {
   margin: 1rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
