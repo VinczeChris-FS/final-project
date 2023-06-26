@@ -20,6 +20,7 @@ npm i -g nodemon
 ### To run
 
 ```
+cd backend
 node index.js
 ```
 
@@ -32,6 +33,7 @@ npm start
 ### To run using nodemon
 
 ```
+cd backend
 nodemon index.js
 ```
 
@@ -44,6 +46,7 @@ npm run dev
 ## Dependencies
 
 ```
+cd backend
 npm install express
 ```
 
