@@ -6,82 +6,103 @@ import { useState } from "react";
 import FormField from "./FormField";
 import CheckField from "./CheckField";
 
-function AddBook() {
+function AddBook(props) {
   // useState hooks
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredPrice, setEnteredPrice] = useState("");
-  const [enteredLength, setEnteredLength] = useState("");
-  const [enteredPublisher, setEnteredPublisher] = useState("");
-  const [enteredYear, setEnteredYear] = useState("");
-  const [enteredInStock, setEnteredInStock] = useState(false);
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [length, setLength] = useState("");
+  const [publisher, setPublisher] = useState("");
+  const [year, setYear] = useState("");
+  const [inStock, setInStock] = useState(false);
 
   // Event handler functions for form fields onChange events
   function titleChangeHandler(e) {
-    setEnteredTitle(e.target.value);
+    setTitle(e.target.value);
   }
   function priceChangeHandler(e) {
-    setEnteredPrice(e.target.value);
+    setPrice(parseFloat(e.target.value));
   }
 
   function lengthChangeHandler(e) {
-    setEnteredLength(e.target.value);
+    setLength(parseFloat(e.target.value));
   }
 
   function publisherChangeHandler(e) {
-    setEnteredPublisher(e.target.value);
+    setPublisher(e.target.value);
   }
 
   function yearChangeHandler(e) {
-    setEnteredYear(e.target.value);
+    setYear(parseFloat(e.target.value));
   }
 
   function inStockChangeHandler(e) {
-    setEnteredInStock(e.currentTarget.checked);
+    setInStock(e.currentTarget.checked);
+  }
+
+  function submitHandler(e) {
+    e.preventDefault();
+    // Pass back an object of useState values to App.js
+    props.onAdd({
+      title,
+      price,
+      length,
+      publisher,
+      year,
+      inStock,
+    });
+
+    // Clear useState values
+    setTitle("");
+    setPrice("");
+    setLength("");
+    setPublisher("");
+    setYear("");
+    setInStock(false);
   }
 
   return (
     <section className="add-book">
       <h2>Add a New Book</h2>
-      <form>
+      <form onSubmit={submitHandler}>
         <FormField
           type="text"
-          label="Title"
+          label="title"
           id="title"
-          value={enteredTitle}
+          value={title}
           onChange={titleChangeHandler}
         />
         <FormField
           type="number"
           label="Price"
           id="price"
-          value={enteredPrice}
+          value={price}
           onChange={priceChangeHandler}
         />
         <FormField
           type="number"
           label="Length in Pages"
           id="length"
-          value={enteredLength}
+          value={length}
           onChange={lengthChangeHandler}
         />
         <FormField
           type="text"
           label="Publisher"
           id="publisher"
-          value={enteredPublisher}
+          value={publisher}
           onChange={publisherChangeHandler}
         />
         <FormField
           type="number"
           label="Publication Year"
           id="year"
-          value={enteredYear}
+          value={year}
           onChange={yearChangeHandler}
         />
         <CheckField
           label="Set as Available"
           id="available"
-          value={enteredInStock}
+          value={inStock}
           onChange={inStockChangeHandler}
         />
         <button type="submit">Add Book</button>
