@@ -82,6 +82,19 @@ div.form-field input:focus {
   background-color: #f8f8ff;
 }
 
+/* ============= CheckField component ============== */
+div.form-field-check input {
+  display: inline;
+  /* Remove 100% width */
+  width: initial;
+  margin-right: 0.5rem;
+}
+
+div.form-field-check label {
+  display: inline-block;
+  width: 90%;
+}
+
 /* ============= BookList component ============== */
 section.books {
   /* 640px equivalent, 40 * 16 (1rem) = 600 */

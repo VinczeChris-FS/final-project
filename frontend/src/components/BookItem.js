@@ -1,9 +1,10 @@
 // BookItem list item component
 
+// If inStock property, add "available" class for CSS styling
 function BookItem(props) {
   return (
     <li
-      // className="book-item"
+      //  className="book-item"
       className={`book-item ${props.inStock === true ? "available" : ""}`}
       onDoubleClick={() => props.onToggle(props.id)}
     >

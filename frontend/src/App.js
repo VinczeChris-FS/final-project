@@ -1,3 +1,5 @@
+// App component
+
 import { useState } from "react";
 
 // Import components
@@ -38,15 +40,10 @@ function App() {
     },
   ]);
 
+  //* CRUD functions
   // Pass in as props to BookList component
-  // Delete book function
-  function deleteBook(id) {
-    // console.log("delete", id);
-    // Set useState hook to filtered books without the passed id
-    setBooks(books.filter((book) => book.id !== id));
-  }
 
-  // Update availability function
+  //* Update availability function
   function updateAvailability(id) {
     // console.log("update", id);
     // Set useState hook to copy with spread and change inStock property to opposite
@@ -56,6 +53,13 @@ function App() {
         book.id === id ? { ...book, inStock: !book.inStock } : book
       )
     );
+  }
+
+  //* Delete book function
+  function deleteBook(id) {
+    // console.log("delete", id);
+    // Set useState hook to filtered books without the passed id
+    setBooks(books.filter((book) => book.id !== id));
   }
 
   return (
