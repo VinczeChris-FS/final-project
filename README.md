@@ -97,7 +97,7 @@ npm start
 
 ### Local project URL
 
-http://localhost:4001/
+http://localhost:3001/
 
 ## Deploy on Heroku
 
