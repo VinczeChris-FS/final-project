@@ -1,0 +1,40 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Sample Title1",
+      "price": 19.99,
+      "length": 416,
+      "publisher": "Sample Publisher",
+      "year": 2022,
+      "inStock": true
+    },
+    {
+      "title": "x",
+      "price": 1,
+      "length": 1,
+      "publisher": "z",
+      "year": 2,
+      "inStock": false,
+      "id": 2
+    },
+    {
+      "title": "s",
+      "price": 2,
+      "length": 2,
+      "publisher": "ff",
+      "year": 12,
+      "inStock": true,
+      "id": 3
+    },
+    {
+      "title": "w",
+      "price": 111,
+      "length": 2,
+      "publisher": "ee",
+      "year": 1112,
+      "inStock": true,
+      "id": 4
+    }
+  ]
+}
