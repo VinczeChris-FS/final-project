@@ -15,13 +15,18 @@ function App() {
   // Array of books - moved to db.json and converted to JSON
   const [books, setBooks] = useState([]);
 
-  // When page app is loaded
+  // When App is loaded
   useEffect(() => {
-    const getBooks = async () => {
+    // Async arrow function example
+    // const getBooks = async () => { }
+    // Async named function
+    async function getBooks() {
+      // Call read books function below
       const booksFromServer = await fetchBooks();
       // Set useState hook with array of books objects
       setBooks(booksFromServer);
-    };
+    }
+    // Call above function
     getBooks();
   }, []);
 
@@ -30,24 +35,39 @@ function App() {
   //* Create book function
   // Pass in as props to AddBook component
   // Passed back object of useState values
-  function addBook(passedBook) {
+  // Async arrow function example
+  // const addBook = async (passedBook) => { }
+  // Async named function
+  async function addBook(passedBook) {
+    // POST to db.json
+    const res = await axios.post("http://localhost:8000/books", passedBook);
+    const data = res.data;
+    // Set useState hook to copy with spread and add new object
+    setBooks([...books, data]);
+
+    // ID no longer needed
     // console.log(passedBook);
     // Create an ID from useState hook array length
-    const id = books.length + 1;
+    // const id = books.length + 1;
     // Create new object with id and passed object, copy properties with spread
-    const newBook = { id, ...passedBook };
+    // const newBook = { id, ...passedBook };
     // console.log(newBook);
     // Set useState hook to copy with spread and add new object
-    setBooks([...books, newBook]);
+    // setBooks([...books, newBook]);
   }
 
   //* Read books function, called in useEffect above.
-  const fetchBooks = async () => {
+  // Async arrow function example
+  // const fetchBooks = async () => { }
+  // Async named function
+  async function fetchBooks() {
+    // GET from db.json
     const res = await axios("http://localhost:8000/books");
+    // Array of objects
     const data = res.data;
     // console.log(data);
     return data;
-  };
+  }
 
   //* Update availability function
   // Pass in as props to BookList component
@@ -64,9 +84,16 @@ function App() {
 
   //* Delete book function
   // Pass in as props to BookList component
-  function deleteBook(id) {
+  // Async arrow function example
+  // const deleteBook = async (id) => { }
+  // Async named function
+  async function deleteBook(id) {
+    // DELETE from db.json
+    await axios.delete(`http://localhost:8000/books/${id}`);
+
     // console.log("delete", id);
     // Set useState hook to filtered books without the passed id
+    // For UI, so no reload needed
     setBooks(books.filter((book) => book.id !== id));
   }
 
