@@ -18,6 +18,13 @@ cd frontend
 npm start
 ```
 
+## Dependency
+
+```
+cd frontend
+npm install axios
+```
+
 ## Dev Dependency
 
 ```

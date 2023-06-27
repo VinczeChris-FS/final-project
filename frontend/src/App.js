@@ -1,6 +1,8 @@
 // App component
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import axios from "axios";
 
 // Import components
 import Header from "./components/Header";
@@ -10,36 +12,18 @@ import BookList from "./components/BookList";
 function App() {
   // useState hook
   // Pass in as props to BookList component
-  // Array of books
-  const [books, setBooks] = useState([
-    {
-      id: 1,
-      title: "Sample Title1",
-      price: 19.99,
-      length: 416,
-      publisher: "Sample Publisher",
-      year: 2022,
-      inStock: true,
-    },
-    {
-      id: 2,
-      title: "Sample Title2",
-      price: 9.99,
-      length: 318,
-      publisher: "Sample Publisher2",
-      year: 2023,
-      inStock: true,
-    },
-    {
-      id: 3,
-      title: "Sample Title3",
-      price: 14.99,
-      length: 391,
-      publisher: "Sample Publisher3",
-      year: 2020,
-      inStock: true,
-    },
-  ]);
+  // Array of books - moved to db.json and converted to JSON
+  const [books, setBooks] = useState([]);
+
+  // When page app is loaded
+  useEffect(() => {
+    const getBooks = async () => {
+      const booksFromServer = await fetchBooks();
+      // Set useState hook with array of books objects
+      setBooks(booksFromServer);
+    };
+    getBooks();
+  }, []);
 
   //* CRUD functions
 
@@ -57,7 +41,13 @@ function App() {
     setBooks([...books, newBook]);
   }
 
-  //* Read is useState array passed to BookList component
+  //* Read books function, called in useEffect above.
+  const fetchBooks = async () => {
+    const res = await axios("http://localhost:8000/books");
+    const data = res.data;
+    // console.log(data);
+    return data;
+  };
 
   //* Update availability function
   // Pass in as props to BookList component
