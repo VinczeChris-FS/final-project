@@ -41,6 +41,7 @@ function App() {
   async function addBook(passedBook) {
     // POST to db.json
     const res = await axios.post("http://localhost:8000/books", passedBook);
+    // New object from Axios data property
     const data = res.data;
     // Set useState hook to copy with spread and add new object
     setBooks([...books, data]);
@@ -62,8 +63,18 @@ function App() {
   // Async named function
   async function fetchBooks() {
     // GET from db.json
-    const res = await axios("http://localhost:8000/books");
-    // Array of objects
+    const res = await axios.get("http://localhost:8000/books");
+    // Array of objects from Axios data property
+    const data = res.data;
+    // console.log(data);
+    return data;
+  }
+
+  //* Read book function
+  async function fetchBook(id) {
+    // GET by id from db.json
+    const res = await axios.get(`http://localhost:8000/books/${id}`);
+    // Array of objects from Axios data property
     const data = res.data;
     // console.log(data);
     return data;
@@ -71,13 +82,28 @@ function App() {
 
   //* Update availability function
   // Pass in as props to BookList component
-  function updateAvailability(id) {
-    // console.log("update", id);
+  async function updateAvailability(id) {
+    // Call above function
+    const bookToToggle = await fetchBook(id);
+    // Toggle inStock property
+    const updatedBook = { ...bookToToggle, inStock: !bookToToggle.inStock };
+    // PUT in db.json
+    const res = await axios.put(
+      `http://localhost:8000/books/${id}`,
+      updatedBook
+    );
+    // New updated object from Axios data property
+    const data = res.data;
+
+    // For UI, so no reload needed
     // Set useState hook to copy with spread and change inStock property to opposite
-    // Of books with passed id or don't change any properties
+    // Of book with passed id or don't change any properties
+    // Set useState hook to copy with spread and change inStock property of new object
+    // Of book with passed id or don't change any properties
     setBooks(
       books.map((book) =>
-        book.id === id ? { ...book, inStock: !book.inStock } : book
+        // book.id === id ? { ...book, inStock: !book.inStock } : book
+        book.id === id ? { ...book, inStock: data.inStock } : book
       )
     );
   }
@@ -91,7 +117,6 @@ function App() {
     // DELETE from db.json
     await axios.delete(`http://localhost:8000/books/${id}`);
 
-    // console.log("delete", id);
     // Set useState hook to filtered books without the passed id
     // For UI, so no reload needed
     setBooks(books.filter((book) => book.id !== id));
