@@ -64,7 +64,9 @@ function App() {
   // Async named function
   async function fetchBooks() {
     // GET from db.json
-    const res = await axios.get("http://localhost:8000/books");
+    // const res = await axios.get("http://localhost:8000/books");
+    // GET from backend API
+    const res = await axios.get("http://localhost:3001/books");
     // Array of objects from Axios data property
     const data = res.data;
     // console.log(data);

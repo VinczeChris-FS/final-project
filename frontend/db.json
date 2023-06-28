@@ -10,58 +10,13 @@
       "inStock": true
     },
     {
-      "title": "x",
-      "price": 1,
-      "length": 1,
-      "publisher": "z",
-      "year": 2,
-      "inStock": false,
+      "title": "Sample Title2",
+      "price": 9.99,
+      "length": 321,
+      "publisher": "Sample Publisher2",
+      "year": 2021,
+      "inStock": true,
       "id": 2
-    },
-    {
-      "title": "s",
-      "price": 2,
-      "length": 2,
-      "publisher": "ff",
-      "year": 12,
-      "inStock": true,
-      "id": 3
-    },
-    {
-      "title": "1",
-      "price": 1,
-      "length": 1,
-      "publisher": "1",
-      "year": 11,
-      "inStock": false,
-      "id": 4
-    },
-    {
-      "title": "2",
-      "price": 2,
-      "length": 2,
-      "publisher": "2",
-      "year": 2,
-      "inStock": true,
-      "id": 5
-    },
-    {
-      "title": "1",
-      "price": 1,
-      "length": 1,
-      "publisher": "1",
-      "year": 1,
-      "inStock": true,
-      "id": 6
-    },
-    {
-      "title": "2",
-      "price": 2,
-      "length": 2,
-      "publisher": "2",
-      "year": 2,
-      "inStock": true,
-      "id": 7
     }
   ]
 }

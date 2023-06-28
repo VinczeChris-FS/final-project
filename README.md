@@ -61,7 +61,7 @@ npm run dev
 
 ```
 
-npm install express
+npm install express morgan cors
 
 ```
 
@@ -81,7 +81,7 @@ Add `engines` property for Node version.
 ```
 
     "engines": {
-    "node": "18.15.0"
+        "node": "18.15.0"
     }
 
 ```
@@ -97,7 +97,8 @@ npm start
 
 ### Local project URL
 
-http://localhost:3001/
+- http://localhost:3001/
+- http://localhost:3001/books
 
 ## Deploy on Heroku
 
