@@ -45,6 +45,7 @@ function App() {
     const data = res.data;
     // Set useState hook to copy with spread and add new object
     setBooks([...books, data]);
+    alert("Book Added");
 
     // ID no longer needed
     // console.log(passedBook);

@@ -66,7 +66,7 @@ function AddBook(props) {
       <form onSubmit={submitHandler}>
         <FormField
           type="text"
-          label="title"
+          label="Title"
           id="title"
           value={title}
           onChange={titleChangeHandler}
