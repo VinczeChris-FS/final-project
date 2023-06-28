@@ -28,13 +28,40 @@
       "id": 3
     },
     {
-      "title": "w",
-      "price": 111,
-      "length": 2,
-      "publisher": "ee",
-      "year": 1112,
-      "inStock": true,
+      "title": "1",
+      "price": 1,
+      "length": 1,
+      "publisher": "1",
+      "year": 11,
+      "inStock": false,
       "id": 4
+    },
+    {
+      "title": "2",
+      "price": 2,
+      "length": 2,
+      "publisher": "2",
+      "year": 2,
+      "inStock": true,
+      "id": 5
+    },
+    {
+      "title": "1",
+      "price": 1,
+      "length": 1,
+      "publisher": "1",
+      "year": 1,
+      "inStock": true,
+      "id": 6
+    },
+    {
+      "title": "2",
+      "price": 2,
+      "length": 2,
+      "publisher": "2",
+      "year": 2,
+      "inStock": true,
+      "id": 7
     }
   ]
 }
