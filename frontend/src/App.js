@@ -40,14 +40,16 @@ function App() {
   // Async named function
   async function addBook(passedBook) {
     // POST to db.json
-    const res = await axios.post("http://localhost:8000/books", passedBook);
+    // const res = await axios.post("http://localhost:8000/books", passedBook);
+    // POST to backend API
+    const res = await axios.post("http://localhost:3001/books", passedBook);
     // New object from Axios data property
     const data = res.data;
     // Set useState hook to copy with spread and add new object
     setBooks([...books, data]);
     alert("Book Added");
 
-    // ID no longer needed
+    // ID no longer needed here
     // console.log(passedBook);
     // Create an ID from useState hook array length
     // const id = books.length + 1;
@@ -73,10 +75,12 @@ function App() {
     return data;
   }
 
-  //* Read book function
+  //* Read book by ID function
   async function fetchBook(id) {
     // GET by id from db.json
-    const res = await axios.get(`http://localhost:8000/books/${id}`);
+    // const res = await axios.get(`http://localhost:8000/books/${id}`);
+    // GET from backend API
+    const res = await axios.get(`http://localhost:3001/books/${id}`);
     // Array of objects from Axios data property
     const data = res.data;
     // console.log(data);
