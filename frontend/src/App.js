@@ -130,7 +130,9 @@ function App() {
   // Async named function
   async function deleteBook(id) {
     // DELETE from db.json
-    await axios.delete(`http://localhost:8000/books/${id}`);
+    // await axios.delete(`http://localhost:8000/books/${id}`);
+    // DELETE from backend API
+    await axios.delete(`http://localhost:3001/books/${id}`);
 
     // For UI, so no reload needed
     // Set useState hook to filtered books without the passed id

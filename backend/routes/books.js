@@ -1,4 +1,4 @@
-// Routes for http://localhost:3001/books
+//* Routes for http://localhost:3001/books
 
 const express = require("express");
 const router = express.Router();
@@ -26,13 +26,14 @@ const BOOKS = [
   },
 ];
 
-// For GET http requests
+//* For GET http requests
 router.get("/", (req, res) => {
   res.status(200).json(BOOKS);
 });
 
-// For GET by ID http requests
+//* For GET by ID http requests
 router.get("/:id", (req, res) => {
+  // Find object by passed ID
   const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
   //   console.log(book);
   if (!book) {
@@ -43,7 +44,7 @@ router.get("/:id", (req, res) => {
   res.status(200).json(book);
 });
 
-// For POST http requests
+//* For POST http requests
 router.post("/", (req, res) => {
   // Get data from body payload
   const title = req.body.title;
@@ -70,7 +71,7 @@ router.post("/", (req, res) => {
   res.status(201).json(newBook);
 });
 
-// For PUT http requests
+//* For PUT http requests
 router.put("/:id", (req, res) => {
   // Same as GET by ID
   const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
@@ -95,6 +96,22 @@ router.put("/:id", (req, res) => {
   book.year = year;
   book.inStock = inStock;
 
+  res.status(200).json(book);
+});
+
+//* For DELETE http requests
+router.delete("/:id", (req, res) => {
+  // Same as GET by ID
+  const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
+  if (!book) {
+    return res.status(404).json({
+      message: "The book with the given ID does not exist",
+    });
+  }
+  // Delete object
+  const index = BOOKS.indexOf(book);
+  // console.log(index);
+  BOOKS.splice(index, 1);
   res.status(200).json(book);
 });
 
