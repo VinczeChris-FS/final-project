@@ -92,26 +92,34 @@ function App() {
   async function updateAvailability(id) {
     // Call above function
     const bookToToggle = await fetchBook(id);
-    // Toggle inStock property
+    // Toggle inStock property to opposite
     const updatedBook = { ...bookToToggle, inStock: !bookToToggle.inStock };
     // PUT in db.json
+    // const res = await axios.put(
+    // `http://localhost:8000/books/${id}`,
+    // updatedBook
+    // );
+    // PUT in backend API
     const res = await axios.put(
-      `http://localhost:8000/books/${id}`,
+      `http://localhost:3001/books/${id}`,
       updatedBook
     );
+
     // New updated object from Axios data property
     const data = res.data;
 
     // For UI, so no reload needed
+    // Originally...
     // Set useState hook to copy with spread and change inStock property to opposite
-    // Of book with passed id or don't change any properties
+    // Of the book with passed id or don't change any properties
+
     // Set useState hook to copy with spread and change inStock property of new object
-    // Of book with passed id or don't change any properties
+    // Of the book with passed id or don't change any properties
     setBooks(
-      books.map((book) =>
-        // book.id === id ? { ...book, inStock: !book.inStock } : book
-        book.id === id ? { ...book, inStock: data.inStock } : book
-      )
+      books.map((book) => {
+        // return book.id === id ? { ...book, inStock: !book.inStock } : book
+        return book.id === id ? { ...book, inStock: data.inStock } : book;
+      })
     );
   }
 
@@ -124,8 +132,8 @@ function App() {
     // DELETE from db.json
     await axios.delete(`http://localhost:8000/books/${id}`);
 
-    // Set useState hook to filtered books without the passed id
     // For UI, so no reload needed
+    // Set useState hook to filtered books without the passed id
     setBooks(books.filter((book) => book.id !== id));
   }
 

@@ -70,4 +70,32 @@ router.post("/", (req, res) => {
   res.status(201).json(newBook);
 });
 
+// For PUT http requests
+router.put("/:id", (req, res) => {
+  // Same as GET by ID
+  const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
+  if (!book) {
+    return res.status(404).json({
+      message: "The book with the given ID does not exist",
+    });
+  }
+  // Get data from body payload
+  const title = req.body.title;
+  const price = req.body.price;
+  const length = req.body.length;
+  const publisher = req.body.publisher;
+  const year = req.body.year;
+  const inStock = req.body.inStock;
+
+  // Update object
+  book.title = title;
+  book.price = price;
+  book.length = length;
+  book.publisher = publisher;
+  book.year = year;
+  book.inStock = inStock;
+
+  res.status(200).json(book);
+});
+
 module.exports = router;
