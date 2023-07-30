@@ -12,22 +12,28 @@ import BookList from "./components/BookList";
 function App() {
   // useState hook
   // Pass in as props to BookList component
-  // Array of books - moved to db.json and converted to JSON
+  // Array of books - originally moved to db.json and converted to JSON
   const [books, setBooks] = useState([]);
 
   // When App is loaded
   useEffect(() => {
     // Async arrow function example
     // const getBooks = async () => { }
+
     // Async named function
-    async function getBooks() {
-      // Call read books function below
-      const booksFromServer = await fetchBooks();
+    async function fetchBooks() {
+      // GET from db.json
+      // const res = await axios.get("http://localhost:8000/books");
+
+      // GET from backend API
+      const res = await axios.get("http://localhost:3001/books");
+      // Array of objects from Axios data property
+      const data = res.data;
       // Set useState hook with array of books objects
-      setBooks(booksFromServer);
+      setBooks(data);
     }
     // Call above function
-    getBooks();
+    fetchBooks();
   }, []);
 
   //* CRUD functions
@@ -41,6 +47,7 @@ function App() {
   async function addBook(passedBook) {
     // POST to db.json
     // const res = await axios.post("http://localhost:8000/books", passedBook);
+
     // POST to backend API
     const res = await axios.post("http://localhost:3001/books", passedBook);
     // New object from Axios data property
@@ -48,37 +55,16 @@ function App() {
     // Set useState hook to copy with spread and add new object
     setBooks([...books, data]);
     alert("Book Added");
-
-    // ID no longer needed here
-    // console.log(passedBook);
-    // Create an ID from useState hook array length
-    // const id = books.length + 1;
-    // Create new object with id and passed object, copy properties with spread
-    // const newBook = { id, ...passedBook };
-    // console.log(newBook);
-    // Set useState hook to copy with spread and add new object
-    // setBooks([...books, newBook]);
   }
 
-  //* Read books function, called in useEffect above.
-  // Async arrow function example
-  // const fetchBooks = async () => { }
-  // Async named function
-  async function fetchBooks() {
-    // GET from db.json
-    // const res = await axios.get("http://localhost:8000/books");
-    // GET from backend API
-    const res = await axios.get("http://localhost:3001/books");
-    // Array of objects from Axios data property
-    const data = res.data;
-    // console.log(data);
-    return data;
-  }
+  //* Read books function
+  // Called in useEffect above.
 
   //* Read book by ID function
   async function fetchBook(id) {
     // GET by id from db.json
     // const res = await axios.get(`http://localhost:8000/books/${id}`);
+
     // GET from backend API
     const res = await axios.get(`http://localhost:3001/books/${id}`);
     // Array of objects from Axios data property
@@ -99,6 +85,7 @@ function App() {
     // `http://localhost:8000/books/${id}`,
     // updatedBook
     // );
+
     // PUT in backend API
     const res = await axios.put(
       `http://localhost:3001/books/${id}`,
@@ -131,6 +118,7 @@ function App() {
   async function deleteBook(id) {
     // DELETE from db.json
     // await axios.delete(`http://localhost:8000/books/${id}`);
+
     // DELETE from backend API
     await axios.delete(`http://localhost:3001/books/${id}`);
 

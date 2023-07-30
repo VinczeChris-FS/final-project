@@ -98,7 +98,7 @@ npm start
 ### Local project URL
 
 - http://localhost:3001/
-- http://localhost:3001/books
+- http://localhost:3001/api/books
 
 ## Deploy on Heroku
 
