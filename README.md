@@ -69,10 +69,14 @@ npm install express morgan cors joi
 
 Update _backend/index.js_ to access built React app using `express.static` for static files.
 
+```
+app.use(express.static(path.resolve(__dirname, "../frontend/build")));
+```
+
 Set scripts for `npm run build`.
 
 ```
-    "build": "cd client && npm install && npm run build"
+    "build": "cd frontend && npm install && npm run build"
 
 ```
 
