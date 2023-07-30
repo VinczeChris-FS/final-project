@@ -61,7 +61,7 @@ npm run dev
 
 ```
 
-npm install express
+npm install express morgan cors joi
 
 ```
 
@@ -81,7 +81,7 @@ Add `engines` property for Node version.
 ```
 
     "engines": {
-    "node": "18.15.0"
+        "node": "18.15.0"
     }
 
 ```
@@ -97,7 +97,8 @@ npm start
 
 ### Local project URL
 
-http://localhost:3001/
+- http://localhost:3001/
+- http://localhost:3001/api/books
 
 ## Deploy on Heroku
 
@@ -120,3 +121,13 @@ heroku logs --app fs-final-project
 ### Heroku URL
 
 https://fs-final-project-2e686e59bee6.herokuapp.com/
+
+## Resources
+
+- [Joi on NPM](https://www.npmjs.com/package/joi?activeTab=readme)
+
+- [Joi Introduction](https://joi.dev/api/?v=17.8.3)
+
+## Pro Tip
+
+In VS Code, you can open any file by its name when you type `CMD+P` (Quick Open).
