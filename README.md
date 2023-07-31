@@ -61,7 +61,7 @@ npm run dev
 
 ```
 
-npm install express morgan cors joi
+npm install express morgan cors
 
 ```
 

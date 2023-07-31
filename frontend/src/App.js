@@ -56,7 +56,10 @@ function App() {
       // const res = await axios.post("http://localhost:8000/books", passedBook);
 
       // POST to backend API
-      const res = await axios.post("http://localhost:3001/books", passedBook);
+      const res = await axios.post(
+        "http://localhost:3001/api/books",
+        passedBook
+      );
       // New object from Axios data property
       const data = res.data;
       // Set useState hook to copy with spread and add new object
@@ -77,7 +80,7 @@ function App() {
       // const res = await axios.get(`http://localhost:8000/books/${id}`);
 
       // GET from backend API
-      const res = await axios.get(`http://localhost:3001/books/${id}`);
+      const res = await axios.get(`http://localhost:3001/api/books/${id}`);
       // Array of objects from Axios data property
       const data = res.data;
       // console.log(data);
@@ -103,7 +106,7 @@ function App() {
 
       // PUT in backend API
       const res = await axios.put(
-        `http://localhost:3001/books/${id}`,
+        `http://localhost:3001/api/books/${id}`,
         updatedBook
       );
 
@@ -139,7 +142,7 @@ function App() {
       // await axios.delete(`http://localhost:8000/books/${id}`);
 
       // DELETE from backend API
-      await axios.delete(`http://localhost:3001/books/${id}`);
+      await axios.delete(`http://localhost:3001/api/books/${id}`);
 
       // For UI, so no reload needed
       // Set useState hook to filtered books without the passed id
