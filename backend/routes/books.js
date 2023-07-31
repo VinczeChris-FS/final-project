@@ -3,9 +3,6 @@
 const express = require("express");
 const router = express.Router();
 
-// To use Joi package to perform input validation
-const Joi = require("joi");
-
 // Not a database, in-memory storage for now
 // Array of objects
 const BOOKS = [
@@ -49,13 +46,7 @@ router.get("/:id", (req, res) => {
 
 //* For POST http requests
 router.post("/", (req, res) => {
-  // Use Joi to validate, pass in body payload
-  // If error is returned, then invalid
-  const { error } = validateBook(req.body);
-  // If invalid, return error
-  if (error) return res.status(400).send(error.details[0].message);
-
-  // Else, get data from body payload
+  // Get data from body payload
   const title = req.body.title;
   const price = req.body.price;
   const length = req.body.length;
@@ -81,7 +72,6 @@ router.post("/", (req, res) => {
 });
 
 //* For PUT http requests
-// PUT to replace, PATCH to partial update
 router.put("/:id", (req, res) => {
   // Same as GET by ID
   const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
@@ -90,13 +80,8 @@ router.put("/:id", (req, res) => {
       message: "The book with the given ID does not exist",
     });
   }
-  // Use Joi to validate, pass in body payload
-  // If error is returned, then invalid
-  const { error } = validateBook(req.body);
-  // If invalid, return error
-  if (error) return res.status(400).send(error.details[0].message);
 
-  // Else, get data from body payload
+  // Get data from body payload
   const title = req.body.title;
   const price = req.body.price;
   const length = req.body.length;
@@ -130,22 +115,5 @@ router.delete("/:id", (req, res) => {
   BOOKS.splice(index, 1);
   res.status(200).json(book);
 });
-
-// Use Joi package to validate object from body payload
-function validateBook(book) {
-  const schema = Joi.object({
-    // Check properties
-    // Make sure it is a string/number/boolean, with minimum characters, and the property is required
-    title: Joi.string().min(2).required(),
-    price: Joi.number().strict().min(1).required(),
-    length: Joi.number().strict().integer().min(1).required(),
-    publisher: Joi.string().min(2).required(),
-    year: Joi.number().strict().integer().min(1900).max(2023).required(),
-    inStock: Joi.boolean().required(),
-  });
-  // Return validation object
-  // console.log(schema.validate(book));
-  return schema.validate(book);
-}
 
 module.exports = router;
