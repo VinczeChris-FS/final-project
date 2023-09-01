@@ -128,7 +128,6 @@ li.book-item::before {
 li.book-item img {
   display: block;
   width: 100%;
-  height: 8rem;
 }
 
 li.book-item p {
