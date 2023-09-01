@@ -8,6 +8,8 @@ const router = express.Router();
 const BOOKS = [
   {
     id: 1,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
     title: "Sample Title1",
     price: 19.99,
     length: 416,
@@ -17,6 +19,8 @@ const BOOKS = [
   },
   {
     id: 2,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
     title: "Sample Title2",
     price: 9.99,
     length: 321,
@@ -61,6 +65,7 @@ router.get("/:id", getBook, (req, res) => {
 //* For POST http requests
 router.post("/", (req, res) => {
   // Get data from body payload
+  const image = req.body.image;
   const title = req.body.title;
   const price = req.body.price;
   const length = req.body.length;
@@ -71,6 +76,7 @@ router.post("/", (req, res) => {
   // Create new object
   const newBook = {
     id: BOOKS.length + 1,
+    image: image,
     title: title,
     price: price,
     length: length,
@@ -89,6 +95,7 @@ router.post("/", (req, res) => {
 // Use getBook middleware above
 router.put("/:id", getBook, (req, res) => {
   // Get data from body payload
+  const image = req.body.image;
   const title = req.body.title;
   const price = req.body.price;
   const length = req.body.length;
@@ -98,6 +105,7 @@ router.put("/:id", getBook, (req, res) => {
 
   // Update object
   // book in response from getBook
+  res.book.image = image;
   res.book.title = title;
   res.book.price = price;
   res.book.length = length;
