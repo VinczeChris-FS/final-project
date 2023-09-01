@@ -18,7 +18,7 @@ function App() {
   // When App is loaded
   useEffect(() => {
     // Async arrow function example
-    // const getBooks = async () => { }
+    // const fetchBooks = async () => { }
 
     // Async named function
     async function fetchBooks() {
@@ -114,15 +114,10 @@ function App() {
       const data = res.data;
 
       // For UI, so no reload needed
-      // Originally...
-      // Set useState hook to copy with spread and change inStock property to opposite
-      // Of the book with passed id or don't change any properties
-
       // Set useState hook to copy with spread and change inStock property of new object
       // Of the book with passed id or don't change any properties
       setBooks(
         books.map((book) => {
-          // return book.id === id ? { ...book, inStock: !book.inStock } : book
           return book.id === id ? { ...book, inStock: data.inStock } : book;
         })
       );
