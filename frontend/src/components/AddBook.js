@@ -8,6 +8,7 @@ import CheckField from "./CheckField";
 
 function AddBook(props) {
   // useState hooks
+  const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [length, setLength] = useState("");
@@ -16,6 +17,11 @@ function AddBook(props) {
   const [inStock, setInStock] = useState(false);
 
   // Event handler functions for form fields onChange events
+  // onChange event happens when user types something in a field
+  function imageChangeHandler(e) {
+    setImage(e.target.value);
+  }
+
   function titleChangeHandler(e) {
     setTitle(e.target.value);
   }
@@ -43,6 +49,7 @@ function AddBook(props) {
     e.preventDefault();
     // Pass back an object of useState values to App.js
     props.onAdd({
+      image,
       title,
       price,
       length,
@@ -52,6 +59,7 @@ function AddBook(props) {
     });
 
     // Clear useState values
+    setImage("");
     setTitle("");
     setPrice("");
     setLength("");
@@ -64,6 +72,13 @@ function AddBook(props) {
     <section className="add-book">
       <h2>Add a New Book</h2>
       <form onSubmit={submitHandler}>
+        <FormField
+          type="text"
+          label="Image"
+          id="image"
+          value={image}
+          onChange={imageChangeHandler}
+        />
         <FormField
           type="text"
           label="Title"

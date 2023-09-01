@@ -118,7 +118,17 @@ li.book-item {
 }
 
 li.book-item::before {
-  content: "Not available";
+  content: "Not Available";
+  font-size: 2rem;
+  color: firebrick;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+li.book-item img {
+  display: block;
+  width: 100%;
+  height: 8rem;
 }
 
 li.book-item p {
