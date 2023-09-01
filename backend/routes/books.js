@@ -26,13 +26,9 @@ const BOOKS = [
   },
 ];
 
-//* For GET http requests
-router.get("/", (req, res) => {
-  res.status(200).json(BOOKS);
-});
-
-//* For GET by ID http requests
-router.get("/:id", (req, res) => {
+// Middleware for GET by ID
+// To avoid repetitive code in GET by ID and PUT http requests
+const getBook = (req, res, next) => {
   // Find object by passed ID
   const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
   //   console.log(book);
@@ -41,7 +37,25 @@ router.get("/:id", (req, res) => {
       message: "The book with the given ID does not exist",
     });
   }
-  res.status(200).json(book);
+  // Pass book in response
+  res.book = book;
+  next();
+};
+
+// RESTful endpoints
+// GET, POST, PATCH, DELETE
+// CRUD - CREATE, READ, UPDATE, and DELETE
+
+//* For GET http requests
+router.get("/", (req, res) => {
+  res.status(200).json(BOOKS);
+});
+
+//* For GET by ID http requests
+// Use getBook middleware above
+router.get("/:id", getBook, (req, res) => {
+  // book in response from getBook
+  res.status(200).json(res.book);
 });
 
 //* For POST http requests
@@ -72,15 +86,8 @@ router.post("/", (req, res) => {
 });
 
 //* For PUT http requests
-router.put("/:id", (req, res) => {
-  // Same as GET by ID
-  const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
-  if (!book) {
-    return res.status(404).json({
-      message: "The book with the given ID does not exist",
-    });
-  }
-
+// Use getBook middleware above
+router.put("/:id", getBook, (req, res) => {
   // Get data from body payload
   const title = req.body.title;
   const price = req.body.price;
@@ -90,12 +97,13 @@ router.put("/:id", (req, res) => {
   const inStock = req.body.inStock;
 
   // Update object
-  book.title = title;
-  book.price = price;
-  book.length = length;
-  book.publisher = publisher;
-  book.year = year;
-  book.inStock = inStock;
+  // book in response from getBook
+  res.book.title = title;
+  res.book.price = price;
+  res.book.length = length;
+  res.book.publisher = publisher;
+  res.book.year = year;
+  res.book.inStock = inStock;
 
   res.status(200).json(book);
 });
