@@ -105,7 +105,7 @@ router.put("/:id", getBook, (req, res) => {
   res.book.year = year;
   res.book.inStock = inStock;
 
-  res.status(200).json(book);
+  res.status(200).json(res.book);
 });
 
 //* For DELETE http requests
