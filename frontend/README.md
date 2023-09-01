@@ -50,7 +50,6 @@ npm run server
 ## App URLs
 
 - http://localhost:3000/
-- http://localhost:8000/books
 
 ## References
 
