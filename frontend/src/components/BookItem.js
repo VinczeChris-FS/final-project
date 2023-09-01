@@ -8,6 +8,7 @@ function BookItem(props) {
       className={`book-item ${props.inStock === true ? "available" : ""}`}
       onDoubleClick={() => props.onToggle(props.id)}
     >
+      <img src={props.image} alt={props.title} />
       <h2>{props.title}</h2>
       <p>Price: ${props.price}</p>
       <p>Length: {props.length}</p>

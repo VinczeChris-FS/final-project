@@ -22,7 +22,7 @@ npm start
 
 ```
 cd frontend
-npm install axios
+npm install axios normalize.css
 ```
 
 ## Dev Dependency

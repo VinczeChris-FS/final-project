@@ -14,6 +14,7 @@ function BookList(props) {
               key={book.id}
               id={book.id}
               title={book.title}
+              image={book.image}
               price={book.price}
               length={book.length}
               publisher={book.publisher}
