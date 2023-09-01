@@ -18,7 +18,7 @@ function App() {
   // Environment variable from .env
   // Update URL in Config Vars in Heroku Settings
   const API_URL = process.env.REACT_APP_BASE_URL;
-  console.log(API_URL);
+  // console.log(API_URL);
 
   // When App is loaded
   useEffect(() => {
