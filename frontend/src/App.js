@@ -15,6 +15,11 @@ function App() {
   // Array of books - originally moved to db.json and converted to JSON
   const [books, setBooks] = useState([]);
 
+  // Environment variable from .env
+  // Update URL in Config Vars in Heroku Settings
+  const API_URL = process.env.REACT_APP_BASE_URL;
+  console.log(API_URL);
+
   // When App is loaded
   useEffect(() => {
     // Async arrow function example
@@ -29,7 +34,10 @@ function App() {
         // const res = await axios.get("http://localhost:8000/books");
 
         // GET from backend API
-        const res = await axios.get("http://localhost:3001/api/books");
+        // const res = await axios.get("http://localhost:3001/api/books");
+
+        // Use environment variable from .env
+        const res = await axios.get(API_URL);
         // Array of objects from Axios data property
         const data = res.data;
         // Set useState hook with array of books objects
@@ -40,7 +48,7 @@ function App() {
     }
     // Call above function
     fetchBooks();
-  }, []);
+  }, [API_URL]);
 
   //* CRUD functions
 
@@ -56,10 +64,14 @@ function App() {
       // const res = await axios.post("http://localhost:8000/books", passedBook);
 
       // POST to backend API
-      const res = await axios.post(
-        "http://localhost:3001/api/books",
-        passedBook
-      );
+      // const res = await axios.post(
+      //   "http://localhost:3001/api/books",
+      //   passedBook
+      // );
+
+      // Use environment variable from .env
+      const res = await axios.post(API_URL, passedBook);
+
       // New object from Axios data property
       const data = res.data;
       // Set useState hook to copy with spread and add new object
@@ -80,7 +92,10 @@ function App() {
       // const res = await axios.get(`http://localhost:8000/books/${id}`);
 
       // GET from backend API
-      const res = await axios.get(`http://localhost:3001/api/books/${id}`);
+      // const res = await axios.get(`http://localhost:3001/api/books/${id}`);
+
+      // Use environment variable from .env
+      const res = await axios.get(`${API_URL}/${id}`);
       // Array of objects from Axios data property
       const data = res.data;
       // console.log(data);
@@ -105,10 +120,13 @@ function App() {
       // );
 
       // PUT in backend API
-      const res = await axios.put(
-        `http://localhost:3001/api/books/${id}`,
-        updatedBook
-      );
+      // const res = await axios.put(
+      //   `http://localhost:3001/api/books/${id}`,
+      //   updatedBook
+      // );
+
+      // Use environment variable from .env
+      const res = await axios.put(`${API_URL}/${id}`, updatedBook);
 
       // New updated object from Axios data property
       const data = res.data;
@@ -137,7 +155,10 @@ function App() {
       // await axios.delete(`http://localhost:8000/books/${id}`);
 
       // DELETE from backend API
-      await axios.delete(`http://localhost:3001/api/books/${id}`);
+      // await axios.delete(`http://localhost:3001/api/books/${id}`);
+
+      // Use environment variable from .env
+      await axios.delete(`${API_URL}/${id}`);
 
       // For UI, so no reload needed
       // Set useState hook to filtered books without the passed id
