@@ -8,24 +8,22 @@ const router = express.Router();
 const BOOKS = [
   {
     id: 1,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
-    title: "Sample Title1",
+    image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Twilightbook.jpg",
+    title: "Twilight",
     price: 19.99,
-    length: 416,
-    publisher: "Sample Publisher",
-    year: 2022,
+    length: 544,
+    publisher: "Little, Brown and Company",
+    year: 2005,
     inStock: true,
   },
   {
     id: 2,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
-    title: "Sample Title2",
-    price: 9.99,
-    length: 321,
-    publisher: "Sample Publisher2",
-    year: 2021,
+    image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Twilightbook.jpg",
+    title: "Twilight",
+    price: 19.99,
+    length: 544,
+    publisher: "Little, Brown and Company",
+    year: 2005,
     inStock: true,
   },
 ];
