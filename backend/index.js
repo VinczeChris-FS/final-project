@@ -9,6 +9,7 @@ const cors = require("cors");
 
 // Use Dotenv for environment variables
 require("dotenv").config();
+
 // require("dotenv").config({
 //   path: "./.env.development.local",
 // });

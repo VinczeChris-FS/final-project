@@ -122,6 +122,15 @@ heroku logs --app fs-final-project
 
 ```
 
+### Heroku Config Vars
+
+Update environment variables from `.env` files on Heroku.
+
+Settings > Config Vars > Reveal Config Vars
+
+- DATABASE_URL
+- REACT_APP_API_URL
+
 ### Heroku URL
 
 https://fs-final-project-2e686e59bee6.herokuapp.com/
