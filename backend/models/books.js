@@ -14,5 +14,5 @@ const bookSchema = new mongoose.Schema({
 });
 
 // Compile schema into a model
-// Export class from schema and creates "books" collection from string
+// Export model and create "books" collection from string
 module.exports = mongoose.model("Book", bookSchema);

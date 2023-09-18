@@ -3,8 +3,7 @@
 const express = require("express");
 const router = express.Router();
 
-// Import Mongoose model
-// Create a Book class
+// Import Mongoose model and create a Book class from model
 const Book = require("../models/books");
 
 // Not a database, in-memory storage for now
@@ -41,7 +40,7 @@ const getBook = async (req, res, next) => {
   let book;
   try {
     // Find book in database from passed ID
-    // Use MongoDB findById() method
+    // Use Mongoose findById() method
     book = await Book.findById(req.params.id);
     // console.log(book);
     if (!book) {
@@ -68,7 +67,7 @@ router.get("/", async (req, res) => {
   // res.status(200).json(BOOKS);
   try {
     // Find all books in database
-    // Use MongoDB find() method
+    // Use Mongoose find() method
     const books = await Book.find();
     res.status(200).json(books);
   } catch (error) {
@@ -123,7 +122,7 @@ router.post("/", async (req, res) => {
     inStock: req.body.inStock,
   });
   // Save to database
-  // Use MongoDB save() method
+  // Use Mongoose save() method
   try {
     const newBook = await book.save();
     res.status(201).json(newBook);
@@ -159,7 +158,7 @@ router.put("/:id", getBook, async (req, res) => {
   // res.status(200).json(res.book);
 
   // Save to database
-  // Use MongoDB save() method
+  // Use Mongoose save() method
   try {
     const updatedBook = await res.book.save();
     res.status(201).json(updatedBook);
@@ -186,7 +185,7 @@ router.delete("/:id", getBook, async (req, res) => {
   // res.status(200).json(book);
 
   // Delete from database
-  // Use MongoDB deleteOne() method
+  // Use Mongoose deleteOne() method
   try {
     const deletedBook = await res.book.deleteOne();
     res.status(201).json(deletedBook);
