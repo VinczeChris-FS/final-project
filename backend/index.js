@@ -2,14 +2,22 @@
 // Runs on http://localhost:3001/api/books
 
 const express = require("express");
+const mongoose = require("mongoose");
 const path = require("path");
 const morgan = require("morgan");
 const cors = require("cors");
 
+// Use Dotenv for environment variables
+require("dotenv").config();
+
+// require("dotenv").config({
+//   path: "./.env.development.local",
+// });
+
 // API routes
 const books = require("./routes/books");
 
-// Heroku will provide environment variable for port or 3001
+// Heroku will automatically provide environment variable for port or 3001
 const PORT = process.env.PORT || 3001;
 
 // Use Express, a lightweight and simple framework for building web servers
@@ -26,8 +34,18 @@ app.use(express.json());
 // HTTP request logger in Terminal
 app.use(morgan("dev"));
 
-// Allow both React and Node.js apps to be deployed on the same domain
+// Connect to localhost:27017 and books database, view in MongoDB Compass app
+// mongoose.connect("mongodb://localhost/books")
 
+// Environment variable from .env
+// Update URL in Config Vars in Heroku Settings
+const database_url = process.env.DATABASE_URL;
+mongoose
+  .connect(database_url)
+  .then(() => console.log("Connected to MongoDB..."))
+  .catch((err) => console.log("Could not connect to MongoDb...", err));
+
+// Allow both React and Node.js apps to be deployed on the same domain
 // Allow Node.js to serve the static files from the built React app
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 

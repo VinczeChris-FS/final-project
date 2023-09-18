@@ -17,7 +17,7 @@ function App() {
 
   // Environment variable from .env
   // Update URL in Config Vars in Heroku Settings
-  const API_URL = process.env.REACT_APP_BASE_URL;
+  const API_URL = process.env.REACT_APP_API_URL;
   // console.log(API_URL);
 
   // When App is loaded
@@ -84,6 +84,7 @@ function App() {
 
   //* Read books function
   // Called in useEffect above.
+  // console.log(books);
 
   //* Read book by ID function
   async function fetchBook(id) {
@@ -136,7 +137,7 @@ function App() {
       // Of the book with passed id or don't change any properties
       setBooks(
         books.map((book) => {
-          return book.id === id ? { ...book, inStock: data.inStock } : book;
+          return book._id === id ? { ...book, inStock: data.inStock } : book;
         })
       );
     } catch (err) {
@@ -162,7 +163,7 @@ function App() {
 
       // For UI, so no reload needed
       // Set useState hook to filtered books without the passed id
-      setBooks(books.filter((book) => book.id !== id));
+      setBooks(books.filter((book) => book._id !== id));
     } catch (err) {
       console.log(err.message);
     }

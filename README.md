@@ -6,9 +6,17 @@ _Note_: The app is named _fs-final-project_ on Heroku.
 
 ## Usage
 
+### Switch Branches and Merge
+
+Merge on `GitHub` with Pull Request.
+
+```
+git switch api
+```
+
 ### Start new Node.js app
 
-Make sure to include root `.gitignore`.
+Make sure to include root `.gitignore` for `node_modules`, `.env`, etc..
 
 ```
 npm init -y
@@ -61,7 +69,7 @@ npm run dev
 
 ```
 
-npm install express morgan cors
+npm install express morgan cors mongoose dotenv
 
 ```
 
@@ -117,14 +125,26 @@ npm start
 Heroku Dashboard > More > View Logs.
 
 ```
-
 heroku logs --app fs-final-project
-
 ```
 
-### Heroku URL
+### Heroku Config Vars
 
-https://fs-final-project-2e686e59bee6.herokuapp.com/
+Update environment variables from `.env` files on Heroku:
+
+`Settings > Config Vars > Reveal Config Vars`
+
+- DATABASE_URL
+- REACT_APP_API_URL
+
+_Note_ In Atlas Compass, make sure can access database from any IP address:
+
+`Network Access > Edit`
+
+### Heroku URLs
+
+- https://fs-final-project-2e686e59bee6.herokuapp.com/
+- https://fs-final-project-2e686e59bee6.herokuapp.com/api/books
 
 ## Pro Tip
 
