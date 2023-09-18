@@ -11,8 +11,8 @@ function BookList(props) {
         {props.books.map((book) => {
           return (
             <BookItem
-              key={book.id}
-              id={book.id}
+              key={book._id}
+              id={book._id}
               title={book.title}
               image={book.image}
               price={book.price}

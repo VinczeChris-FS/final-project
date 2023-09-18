@@ -8,7 +8,7 @@ _Note_: The app is named _fs-final-project_ on Heroku.
 
 ### Start new Node.js app
 
-Make sure to include root `.gitignore`.
+Make sure to include root `.gitignore` for `node_modules`, `.env`, etc..
 
 ```
 npm init -y
@@ -61,7 +61,7 @@ npm run dev
 
 ```
 
-npm install express morgan cors
+npm install express morgan cors mongoose dotenv
 
 ```
 
