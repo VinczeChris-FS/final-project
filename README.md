@@ -6,6 +6,14 @@ _Note_: The app is named _fs-final-project_ on Heroku.
 
 ## Usage
 
+### Switch Branches and Merge
+
+Merge on `GitHub` with Pull Request.
+
+```
+git switch api
+```
+
 ### Start new Node.js app
 
 Make sure to include root `.gitignore` for `node_modules`, `.env`, etc..
