@@ -117,23 +117,26 @@ npm start
 Heroku Dashboard > More > View Logs.
 
 ```
-
 heroku logs --app fs-final-project
-
 ```
 
 ### Heroku Config Vars
 
-Update environment variables from `.env` files on Heroku.
+Update environment variables from `.env` files on Heroku:
 
-Settings > Config Vars > Reveal Config Vars
+`Settings > Config Vars > Reveal Config Vars`
 
 - DATABASE_URL
 - REACT_APP_API_URL
 
-### Heroku URL
+_Note_ In Atlas Compass, make sure can access database from any IP address:
 
-https://fs-final-project-2e686e59bee6.herokuapp.com/
+`Network Access > Edit`
+
+### Heroku URLs
+
+- https://fs-final-project-2e686e59bee6.herokuapp.com/
+- https://fs-final-project-2e686e59bee6.herokuapp.com/api/books
 
 ## Pro Tip
 
