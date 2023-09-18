@@ -80,8 +80,9 @@ router.get("/", async (req, res) => {
 
 //* For GET by ID HTTP requests
 // Use getBook middleware above
-router.get("/:id", getBook, (req, res) => {
+router.get("/:id", getBook, async (req, res) => {
   // book in response from getBook
+  console.log(res.book);
   res.status(200).json(res.book);
 });
 
@@ -114,6 +115,7 @@ router.post("/", async (req, res) => {
   // Create a new instance from Book class
   // Get data from body payload
   const book = new Book({
+    image: req.body.image,
     title: req.body.title,
     price: req.body.price,
     length: req.body.length,

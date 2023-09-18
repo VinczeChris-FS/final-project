@@ -61,7 +61,7 @@ npm run dev
 
 ```
 
-npm install express morgan cors mongoose
+npm install express morgan cors mongoose dotenv
 
 ```
 
