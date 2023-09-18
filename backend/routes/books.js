@@ -82,7 +82,7 @@ router.get("/", async (req, res) => {
 // Use getBook middleware above
 router.get("/:id", getBook, async (req, res) => {
   // book in response from getBook
-  console.log(res.book);
+  // console.log(res.book);
   res.status(200).json(res.book);
 });
 
@@ -187,9 +187,9 @@ router.delete("/:id", getBook, async (req, res) => {
   // res.status(200).json(book);
 
   // Delete from database
-  // Use MongoDB delete() method
+  // Use MongoDB remove() method
   try {
-    const deletedBook = await res.book.delete();
+    const deletedBook = await res.book.remove();
     res.status(201).json(deletedBook);
   } catch (error) {
     res.status(500).json({
