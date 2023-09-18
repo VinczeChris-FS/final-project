@@ -84,7 +84,7 @@ function App() {
 
   //* Read books function
   // Called in useEffect above.
-  console.log(books);
+  // console.log(books);
 
   //* Read book by ID function
   async function fetchBook(id) {
@@ -163,7 +163,7 @@ function App() {
 
       // For UI, so no reload needed
       // Set useState hook to filtered books without the passed id
-      setBooks(books.filter((book) => book.id !== id));
+      setBooks(books.filter((book) => book._id !== id));
     } catch (err) {
       console.log(err.message);
     }
