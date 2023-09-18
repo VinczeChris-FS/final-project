@@ -3,30 +3,33 @@
 const express = require("express");
 const router = express.Router();
 
+// Import Mongoose model
+const Book = require("../models/books");
+
 // Not a database, in-memory storage for now
 // Array of objects
-const BOOKS = [
-  {
-    id: 1,
-    image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Twilightbook.jpg",
-    title: "Twilight",
-    price: 19.99,
-    length: 544,
-    publisher: "Little, Brown and Company",
-    year: 2005,
-    inStock: true,
-  },
-  {
-    id: 2,
-    image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Twilightbook.jpg",
-    title: "Twilight",
-    price: 19.99,
-    length: 544,
-    publisher: "Little, Brown and Company",
-    year: 2005,
-    inStock: true,
-  },
-];
+// const BOOKS = [
+//   {
+//     id: 1,
+//     image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Twilightbook.jpg",
+//     title: "Twilight",
+//     price: 19.99,
+//     length: 544,
+//     publisher: "Little, Brown and Company",
+//     year: 2005,
+//     inStock: true,
+//   },
+//   {
+//     id: 2,
+//     image: "https://upload.wikimedia.org/wikipedia/en/1/1d/Twilightbook.jpg",
+//     title: "Twilight",
+//     price: 19.99,
+//     length: 544,
+//     publisher: "Little, Brown and Company",
+//     year: 2005,
+//     inStock: true,
+//   },
+// ];
 
 // Middleware for GET by ID
 // To avoid repetitive code in GET by ID and PUT http requests
