@@ -6,7 +6,7 @@ function CheckField(props) {
       <input
         type="checkbox"
         id={props.id}
-        value={props.value}
+        checked={props.value}
         onChange={props.onChange}
       />
       <label htmlFor={props.id}>{props.label}</label>
