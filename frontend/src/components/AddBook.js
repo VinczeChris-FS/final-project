@@ -15,7 +15,7 @@ function AddBook(props) {
   const [length, setLength] = useState("");
   const [publisher, setPublisher] = useState("");
   const [year, setYear] = useState("");
-  const [inStock, setInStock] = useState(false);
+  const [inStock, setInStock] = useState(true);
 
   // Event handler functions for form fields onChange events
   // onChange event happens when user types something in a field
@@ -48,6 +48,8 @@ function AddBook(props) {
   }
 
   function inStockChangeHandler(e) {
+    // console.log(e.currentTarget.checked);
+    // e.target.checked = false
     setInStock(e.currentTarget.checked);
   }
 
@@ -73,7 +75,8 @@ function AddBook(props) {
     setLength("");
     setPublisher("");
     setYear("");
-    setInStock(false);
+    setInStock("");
+    setInStock(true);
   }
 
   return (
