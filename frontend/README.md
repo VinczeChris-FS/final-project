@@ -25,6 +25,12 @@ cd frontend
 npm install axios normalize.css
 ```
 
+_Note:_ Must import Normalize.css into `index.js`.
+
+```
+import "normalize.css";
+```
+
 ## Dev Dependency
 
 ```
