@@ -1,4 +1,4 @@
-// BookItem list item component
+//* BookItem list item component
 
 // If inStock property, add "available" class for CSS styling
 function BookItem(props) {
@@ -11,6 +11,7 @@ function BookItem(props) {
       <img src={props.image} alt={props.title} />
       <h2>{props.title}</h2>
       <p>Price: ${props.price}</p>
+      <p>Author: ${props.author}</p>
       <p>Length: {props.length}</p>
       <p>Publisher: {props.publisher}</p>
       <p>Year: {props.year}</p>

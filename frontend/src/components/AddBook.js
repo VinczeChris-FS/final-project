@@ -1,4 +1,4 @@
-// AddBook form component
+//* AddBook form component
 
 import { useState } from "react";
 
@@ -10,6 +10,7 @@ function AddBook(props) {
   // useState hooks
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
   const [price, setPrice] = useState("");
   const [length, setLength] = useState("");
   const [publisher, setPublisher] = useState("");
@@ -25,6 +26,11 @@ function AddBook(props) {
   function titleChangeHandler(e) {
     setTitle(e.target.value);
   }
+
+  function authorChangeHandler(e) {
+    setAuthor(e.target.value);
+  }
+
   function priceChangeHandler(e) {
     setPrice(parseFloat(e.target.value));
   }
@@ -51,6 +57,7 @@ function AddBook(props) {
     props.onAdd({
       image,
       title,
+      author,
       price,
       length,
       publisher,
@@ -61,6 +68,7 @@ function AddBook(props) {
     // Clear useState values
     setImage("");
     setTitle("");
+    setAuthor("");
     setPrice("");
     setLength("");
     setPublisher("");
@@ -85,6 +93,13 @@ function AddBook(props) {
           id="title"
           value={title}
           onChange={titleChangeHandler}
+        />
+        <FormField
+          type="text"
+          label="Author"
+          id="author"
+          value={author}
+          onChange={authorChangeHandler}
         />
         <FormField
           type="number"

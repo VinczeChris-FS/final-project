@@ -1,3 +1,5 @@
+//* Model for Mongoose
+
 // Import Mongoose third-party package
 // To connect to MongoDB database
 const mongoose = require("mongoose");
@@ -5,6 +7,7 @@ const mongoose = require("mongoose");
 // Create a schema for mongoose
 const bookSchema = new mongoose.Schema({
   image: String,
+  author: String,
   title: String,
   price: Number,
   length: Number,
