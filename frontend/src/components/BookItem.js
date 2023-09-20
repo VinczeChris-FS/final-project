@@ -10,8 +10,10 @@ function BookItem(props) {
     >
       <img src={props.image} alt={props.title} />
       <h2>{props.title}</h2>
+      <p>
+        <strong>{props.author}</strong>
+      </p>
       <p>Price: ${props.price}</p>
-      <p>Author: ${props.author}</p>
       <p>Length: {props.length}</p>
       <p>Publisher: {props.publisher}</p>
       <p>Year: {props.year}</p>
