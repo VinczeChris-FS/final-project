@@ -1,4 +1,4 @@
-// BookList section and list component
+//* BookList section and unordered list component
 
 // Import BookItem component
 import BookItem from "./BookItem";
@@ -14,6 +14,7 @@ function BookList(props) {
               key={book._id}
               id={book._id}
               title={book.title}
+              author={book.author}
               image={book.image}
               price={book.price}
               length={book.length}

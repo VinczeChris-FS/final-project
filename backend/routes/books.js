@@ -114,6 +114,7 @@ router.post("/", async (req, res) => {
   // Get data from body payload
   const book = new Book({
     image: req.body.image,
+    author: req.body.author,
     title: req.body.title,
     price: req.body.price,
     length: req.body.length,
@@ -138,6 +139,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", getBook, async (req, res) => {
   // Get data from body payload
   const image = req.body.image;
+  const author = req.body.author;
   const title = req.body.title;
   const price = req.body.price;
   const length = req.body.length;
@@ -148,6 +150,7 @@ router.put("/:id", getBook, async (req, res) => {
   // Update object
   // book in response from getBook
   res.book.image = image;
+  res.book.author = author;
   res.book.title = title;
   res.book.price = price;
   res.book.length = length;

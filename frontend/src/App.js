@@ -1,4 +1,4 @@
-// App component
+//* App component
 
 import { useState, useEffect } from "react";
 

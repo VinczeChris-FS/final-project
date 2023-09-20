@@ -1,4 +1,4 @@
-// CheckField component
+//* CheckField div, label, and checkbox input component
 
 function CheckField(props) {
   return (

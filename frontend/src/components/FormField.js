@@ -1,4 +1,4 @@
-// FormField component
+//* FormField div, label, and input component
 
 function FormField(props) {
   return (

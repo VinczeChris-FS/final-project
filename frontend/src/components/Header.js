@@ -1,4 +1,4 @@
-// Header component
+//* Header component
 
 function Header() {
   return (
