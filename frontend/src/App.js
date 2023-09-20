@@ -12,7 +12,7 @@ import BookList from "./components/BookList";
 function App() {
   // useState hook
   // Pass in as props to BookList component
-  // Array of books - originally moved to db.json and converted to JSON
+  // Array of books
   const [books, setBooks] = useState([]);
 
   // Environment variable from .env
