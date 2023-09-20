@@ -99,6 +99,7 @@ div.form-field-check label {
 
 /* ============= BookList component ============== */
 section.books {
+  max-width: 90%;
   margin: 2rem auto;
 }
 
@@ -115,10 +116,9 @@ ul.book-list {
 /* ============= BookItem component ============== */
 li.book-item {
   max-width: 20rem;
-  margin: 1rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 6px;
-  padding: 1rem;
+  padding: 1.5rem;
   opacity: 0.5;
 }
 
