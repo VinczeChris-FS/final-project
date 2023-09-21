@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 // Import Mongoose model and create a Book class from model
-const Book = require("../models/books");
+const Book = require("../models/book");
 
 // Not a database, in-memory storage for now
 // Array of objects
