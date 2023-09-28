@@ -3,7 +3,8 @@
 const express = require("express");
 const router = express.Router();
 
-// Import Mongoose model and create a Book class from model
+// Import Mongoose model
+// Like a class, blueprint for creating objects
 const Book = require("../models/book");
 
 // Not a database, in-memory storage for now
@@ -147,8 +148,8 @@ router.put("/:id", getBook, async (req, res) => {
   const year = req.body.year;
   const inStock = req.body.inStock;
 
-  // Update object
   // book in response from getBook
+  // Update object properties
   res.book.image = image;
   res.book.author = author;
   res.book.title = title;
