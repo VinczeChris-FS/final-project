@@ -10,6 +10,7 @@ const cors = require("cors");
 // Use Dotenv for environment variables
 require("dotenv").config();
 
+// To use different .env document
 // require("dotenv").config({
 //   path: "./.env.development.local",
 // });
@@ -49,7 +50,7 @@ mongoose
 // Allow Node.js to serve the static files from the built React app
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
-// For API endpoint
+// For API endpoints
 app.use("/api/books", books);
 
 // If a GET request comes in not handled by API endpoint, return React app

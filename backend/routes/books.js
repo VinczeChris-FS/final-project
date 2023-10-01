@@ -3,7 +3,8 @@
 const express = require("express");
 const router = express.Router();
 
-// Import Mongoose model and create a Book class from model
+// Import Mongoose model
+// Like a class, blueprint for creating objects
 const Book = require("../models/book");
 
 // Not a database, in-memory storage for now
@@ -36,6 +37,16 @@ const Book = require("../models/book");
 const getBook = async (req, res, next) => {
   // Find object by passed ID
   // const book = BOOKS.find((b) => b.id === parseInt(req.params.id));
+  // console.log(book);
+  // if (!book) {
+  //   return res.status(404).json({
+  //     message: "The book with the given ID does not exist",
+  //   });
+  // }
+  // Pass book in response
+  // res.book = book;
+  // next();
+
   // Use try and catch for async error catching
   let book;
   try {
@@ -110,6 +121,8 @@ router.post("/", async (req, res) => {
   // Add new object to array
   // BOOKS.push(newBook);
 
+  //  res.status(201).json(newBook);
+
   // Create a new instance from Book class
   // Get data from body payload
   const book = new Book({
@@ -147,8 +160,8 @@ router.put("/:id", getBook, async (req, res) => {
   const year = req.body.year;
   const inStock = req.body.inStock;
 
-  // Update object
   // book in response from getBook
+  // Update object properties
   res.book.image = image;
   res.book.author = author;
   res.book.title = title;
