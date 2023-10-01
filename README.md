@@ -6,9 +6,17 @@ _Note_: The app is named _fs-final-project_ on Heroku.
 
 ## Usage
 
+### Switch Branches and Merge
+
+Merge on `GitHub` with Pull Request.
+
+```
+git switch api
+```
+
 ### Start new Node.js app
 
-Make sure to include root `.gitignore`.
+Make sure to include root `.gitignore` for `node_modules`, `.env`, etc..
 
 ```
 npm init -y
@@ -61,7 +69,7 @@ npm run dev
 
 ```
 
-npm install express
+npm install express morgan cors mongoose dotenv
 
 ```
 
@@ -69,10 +77,14 @@ npm install express
 
 Update _backend/index.js_ to access built React app using `express.static` for static files.
 
+```
+app.use(express.static(path.resolve(__dirname, "../frontend/build")));
+```
+
 Set scripts for `npm run build`.
 
 ```
-    "build": "cd client && npm install && npm run build"
+    "build": "cd frontend && npm install && npm run build"
 
 ```
 
@@ -81,7 +93,7 @@ Add `engines` property for Node version.
 ```
 
     "engines": {
-    "node": "18.15.0"
+        "node": "18.15.0"
     }
 
 ```
@@ -97,7 +109,8 @@ npm start
 
 ### Local project URL
 
-http://localhost:4001/
+- http://localhost:3001/
+- http://localhost:3001/api/books
 
 ## Deploy on Heroku
 
@@ -112,11 +125,27 @@ http://localhost:4001/
 Heroku Dashboard > More > View Logs.
 
 ```
-
 heroku logs --app fs-final-project
-
 ```
 
-### Heroku URL
+### Heroku Config Vars
 
-https://fs-final-project-2e686e59bee6.herokuapp.com/
+Update environment variables from `.env` files on Heroku:
+
+`Settings > Config Vars > Reveal Config Vars`
+
+- DATABASE_URL
+- REACT_APP_API_URL
+
+_Note_ In Atlas Compass, make sure can access database from any IP address:
+
+`Network Access > Edit`
+
+### Heroku URLs
+
+- https://fs-final-project-2e686e59bee6.herokuapp.com/
+- https://fs-final-project-2e686e59bee6.herokuapp.com/api/books
+
+## Pro Tip
+
+In VS Code, you can open any file by its name when you type `CMD+P` (Quick Open).

@@ -22,7 +22,7 @@ h3 {
 /* ============= Header component ============== */
 header {
   background-color: #cce8e5;
-  /* 72px equivalent, 4.5 * 16 (1rem) = 72 */
+  /* 72px equivalent, 50 * 16 (1rem) = 72 */
   height: 4.5rem;
   display: flex;
   justify-content: center;
@@ -35,8 +35,8 @@ header h1 {
 
 /* ============= AddBook component ============== */
 section.add-book {
-  /* 640px equivalent, 40 * 16 (1rem) = 640 */
-  max-width: 40rem;
+  /* 800px equivalent, 50 * 16 (1rem) = 800 */
+  max-width: 50rem;
   margin: 0 auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 6px;
@@ -44,9 +44,8 @@ section.add-book {
 }
 
 button {
-  /* Take value from its parent element, not browser default */
-  font-family: inherit;
-  font-size: 100%;
+  /* Take values from its parent element, not browser default */
+  font: inherit;
   padding: 0.5rem 2rem;
   background-color: #cce8e5;
   border: 1px solid #cce8e5;
@@ -72,8 +71,8 @@ div.form-field label {
 }
 
 div.form-field input {
-  font-family: inherit;
-  font-size: 100%;
+  /* Take values from its parent element, not browser default */
+  font: inherit;
   display: block;
   width: 100%;
   padding: 0.5rem;
@@ -99,15 +98,12 @@ div.form-field-check label {
 
 /* ============= BookList component ============== */
 section.books {
-  max-width: 90%;
+  /* 640px equivalent, 40 * 16 (1rem) = 640 */
+  max-width: 40rem;
   margin: 2rem auto;
 }
 
 ul.book-list {
-  /* So books will take up as much space as needed */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -115,10 +111,10 @@ ul.book-list {
 
 /* ============= BookItem component ============== */
 li.book-item {
-  max-width: 20rem;
+  margin: 1rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 6px;
-  padding: 1.5rem;
+  padding: 1rem;
   opacity: 0.5;
 }
 
@@ -149,8 +145,8 @@ li.book-item.available::before {
 }
 
 button.delete-btn {
-  font-family: inherit;
-  font-size: 100%;
+  /* Take values from its parent element, not browser default */
+  font: inherit;
   padding: 0.5rem 2rem;
   background-color: #edefef;
   border: 1px solid #edefef;
@@ -164,5 +160,5 @@ button.delete-btn:hover {
 }
 
 p.availability-msg {
-  text-align: center;
+  text-align: right;
 }

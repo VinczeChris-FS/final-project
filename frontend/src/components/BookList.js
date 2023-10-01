@@ -1,26 +1,31 @@
-// BookList section and list component
+//* BookList section and unordered list component
 
 // Import BookItem component
 import BookItem from "./BookItem";
 
-function BookList() {
+// useState hook passed in from App.js
+function BookList(props) {
   return (
     <section className="books">
       <ul className="book-list">
-        <BookItem
-          title="Sample Title1"
-          price="19.99"
-          length="416"
-          publisher="Sample Publisher"
-          year="2023"
-        />
-        <BookItem
-          title="Sample Title2"
-          price="19.99"
-          length="416"
-          publisher="Sample Publisher"
-          year="2023"
-        />
+        {props.books.map((book) => {
+          return (
+            <BookItem
+              key={book._id}
+              id={book._id}
+              image={book.image}
+              title={book.title}
+              author={book.author}
+              price={book.price}
+              length={book.length}
+              publisher={book.publisher}
+              year={book.year}
+              inStock={book.inStock}
+              onDelete={props.onDelete}
+              onToggle={props.onToggle}
+            />
+          );
+        })}
       </ul>
     </section>
   );
