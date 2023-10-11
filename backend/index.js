@@ -35,11 +35,11 @@ app.use(express.json());
 // HTTP request logger in Terminal
 app.use(morgan("dev"));
 
-// Connect to localhost:27017 and books database, view in MongoDB Compass app
-// mongoose.connect("mongodb://localhost/books")
+// Connect to localhost:27017 and final-project database, view in MongoDB Compass app
+// mongoose.connect("mongodb://localhost/final-project")
 
 // Environment variable from .env
-// Update URL in Config Vars in Heroku Settings
+// Update DATABASE_URL in Config Vars in Heroku Settings
 const database_url = process.env.DATABASE_URL;
 mongoose
   .connect(database_url)

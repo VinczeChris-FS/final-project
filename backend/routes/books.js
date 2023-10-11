@@ -135,9 +135,10 @@ router.post("/", async (req, res) => {
     year: req.body.year,
     inStock: req.body.inStock,
   });
-  // Save to database
-  // Use Mongoose save() method
+
   try {
+    // Save to database
+    // Use Mongoose save() method
     const newBook = await book.save();
     res.status(201).json(newBook);
   } catch (error) {
@@ -173,9 +174,9 @@ router.put("/:id", getBook, async (req, res) => {
 
   // res.status(200).json(res.book);
 
-  // Save to database
-  // Use Mongoose save() method
   try {
+    // Save to database
+    // Use Mongoose save() method
     const updatedBook = await res.book.save();
     res.status(201).json(updatedBook);
   } catch (error) {
@@ -200,9 +201,9 @@ router.delete("/:id", getBook, async (req, res) => {
   // BOOKS.splice(index, 1);
   // res.status(200).json(book);
 
-  // Delete from database
-  // Use Mongoose deleteOne() method
   try {
+    // Delete from database
+    // Use Mongoose deleteOne() method
     const deletedBook = await res.book.deleteOne();
     res.status(201).json(deletedBook);
   } catch (error) {
