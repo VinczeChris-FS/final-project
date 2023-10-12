@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 3001;
 // Use Express, a lightweight and simple framework for building web servers
 const app = express();
 
-// development by default
+// "development" by default
 console.log(`app: ${app.get("env")}`);
 
 // Use different .env document in development environment
