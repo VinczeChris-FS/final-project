@@ -8,11 +8,11 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 // Use Dotenv for environment variables
-require("dotenv").config();
+// require("dotenv").config();
 
 // To use different .env document
 // require("dotenv").config({
-//   path: "./.env.development.local",
+//   path: "./.env.development",
 // });
 
 // API routes
@@ -23,6 +23,16 @@ const PORT = process.env.PORT || 3001;
 
 // Use Express, a lightweight and simple framework for building web servers
 const app = express();
+
+// development by default
+console.log(`app: ${app.get("env")}`);
+
+// Use different .env document in development environment
+if (app.get("env") === "development") {
+  require("dotenv").config({
+    path: "./.env.development",
+  });
+}
 
 // Middleware
 
