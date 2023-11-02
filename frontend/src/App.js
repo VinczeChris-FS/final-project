@@ -46,7 +46,7 @@ function App() {
         console.log(err.message);
       }
     }
-    // Call above function
+    // Call above functiona
     fetchBooks();
   }, [API_URL]);
 

@@ -1,0 +1,74 @@
+{
+  "books": [
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/en/1/1d/Twilightbook.jpg",
+      "title": "Twilight",
+      "author": "Stephenie Meyer",
+      "price": 19.99,
+      "length": 544,
+      "publisher": "Little, Brown and Company",
+      "year": 2005,
+      "inStock": true
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/en/e/e4/It_Ends_with_Us_%28Colleen_Hoover%29.png",
+      "title": "It Ends with Us",
+      "author": "Colleen Hoover",
+      "price": 9.99,
+      "length": 384,
+      "publisher": "Atria Books",
+      "year": 2016,
+      "inStock": true
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/en/f/f4/Divergent_%28book%29_by_Veronica_Roth_US_Hardcover_2011.jpg",
+      "title": "Divergent",
+      "author": "Veronica Roth",
+      "price": 9.99,
+      "length": 576,
+      "publisher": "Katherine Tegen Books",
+      "year": 2011,
+      "inStock": true
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/en/8/86/The_School_for_Good_and_Evil_book_1_cover.jpg",
+      "title": "The School for Good and Evil",
+      "author": "Soman Chainani",
+      "price": 8.99,
+      "length": 532,
+      "publisher": "HarperCollins",
+      "year": 2013,
+      "inStock": true
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/en/e/e4/It_Ends_with_Us_%28Colleen_Hoover%29.png",
+      "title": "It Ends with Us",
+      "author": "Colleen Hoover",
+      "price": 9.99,
+      "length": 384,
+      "publisher": "Atria Books",
+      "year": 2016,
+      "inStock": true
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/en/2/20/The_Cruel_Prince.jpg",
+      "title": "The Cruel Prince",
+      "author": "Holly Black",
+      "price": 6.99,
+      "length": 416,
+      "publisher": "Little Brown Books for Young Readers",
+      "year": 2018,
+      "inStock": true
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/dc/The_Hunger_Games.jpg",
+      "title": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "price": 7.99,
+      "length": 384,
+      "publisher": "Scholastic",
+      "year": 2008,
+      "inStock": true
+    }
+  ]
+}

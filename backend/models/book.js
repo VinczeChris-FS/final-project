@@ -7,8 +7,8 @@ const mongoose = require("mongoose");
 // Create a schema for mongoose
 const bookSchema = new mongoose.Schema({
   image: String,
-  author: String,
   title: String,
+  author: String,
   price: Number,
   length: Number,
   publisher: String,

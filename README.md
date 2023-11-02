@@ -6,9 +6,15 @@ _Note_: The app is named _fs-final-project_ on Heroku.
 
 ## Usage
 
-### Switch Branches and Merge
+### Create a new branch
 
-Merge on `GitHub` with Pull Request.
+```
+git branch api
+```
+
+### Switch Branches
+
+Merge with `main` branch on `GitHub` with Pull Request.
 
 ```
 git switch api
@@ -16,7 +22,7 @@ git switch api
 
 ### Start new Node.js app
 
-Make sure to include root `.gitignore` for `node_modules`, `.env`, etc..
+Make sure to include root `.gitignore` for `node_modules`, `.env`, etc.
 
 ```
 npm init -y
@@ -107,10 +113,40 @@ npm start
 
 ```
 
-### Local project URL
+### Local project URLs
 
 - http://localhost:3001/
 - http://localhost:3001/api/books
+
+## ESlint, Prettier, & Airbnb JavaScript Style Guide
+
+### Dev dependencies
+
+```
+npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
+```
+
+```
+npx install-peerdeps --dev eslint-config-airbnb
+```
+
+### Create ESLint config file
+
+```
+npm init @eslint/config
+```
+
+### Constomize ESLint / Airbnb Style Guide rules
+
+In `.eslintrc.js` document.
+
+```
+  rules: {
+    quotes: "off",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+  },
+```
 
 ## Deploy on Heroku
 
@@ -124,8 +160,10 @@ npm start
 
 Heroku Dashboard > More > View Logs.
 
-```
+````
+
 heroku logs --app fs-final-project
+
 ```
 
 ### Heroku Config Vars
@@ -137,7 +175,7 @@ Update environment variables from `.env` files on Heroku:
 - DATABASE_URL
 - REACT_APP_API_URL
 
-_Note_ In Atlas Compass, make sure can access database from any IP address:
+_Note_ In MongoDB Atlas (cloud MongoDB database), make sure can access database from any IP address:
 
 `Network Access > Edit`
 
@@ -149,3 +187,5 @@ _Note_ In Atlas Compass, make sure can access database from any IP address:
 ## Pro Tip
 
 In VS Code, you can open any file by its name when you type `CMD+P` (Quick Open).
+```
+````

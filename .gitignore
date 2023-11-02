@@ -17,4 +17,5 @@ node_modules/
 .DS_Store
 
 # Misc
-sampleBooks.json
+.vscode
+
