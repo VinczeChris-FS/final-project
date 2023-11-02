@@ -158,12 +158,10 @@ In `.eslintrc.js` document.
 
 ### View Heroku logs
 
-Heroku Dashboard > More > View Logs.
+`Heroku Dashboard > More > View Logs`
 
-````
-
+```
 heroku logs --app fs-final-project
-
 ```
 
 ### Heroku Config Vars
@@ -187,5 +185,11 @@ _Note_ In MongoDB Atlas (cloud MongoDB database), make sure can access database 
 ## Pro Tip
 
 In VS Code, you can open any file by its name when you type `CMD+P` (Quick Open).
+
 ```
-````
+
+```
+
+```
+
+```
