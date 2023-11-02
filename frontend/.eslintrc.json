@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["react-app", "airbnb"],
+  "extends": ["react-app"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
